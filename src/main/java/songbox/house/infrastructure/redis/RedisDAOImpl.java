@@ -17,11 +17,11 @@ import java.util.concurrent.TimeUnit;
 import static java.util.Optional.ofNullable;
 import static java.util.stream.Collectors.toMap;
 
-public abstract class AbstractRedisDAO implements RedisDAO {
+public class RedisDAOImpl implements RedisDAO {
 
     private final Pool<Jedis> pool;
 
-    protected AbstractRedisDAO(String host, Integer port, String password, Integer dbIndex, Integer timeoutMs) {
+    public RedisDAOImpl(String host, Integer port, String password, Integer dbIndex, Integer timeoutMs) {
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
         this.pool = new JedisPool(jedisPoolConfig, host, port, timeoutMs, password, dbIndex);
     }

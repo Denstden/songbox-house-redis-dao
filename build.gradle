@@ -14,3 +14,12 @@ repositories {
 dependencies {
     compile 'redis.clients:jedis:3.2.0'
 }
+
+jar {
+    baseName 'songbox-house-redis-dao'
+    enabled = true
+    doFirst {
+        from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    }
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
+}
