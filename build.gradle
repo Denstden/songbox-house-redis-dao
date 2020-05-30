@@ -1,11 +1,10 @@
-plugins {
-    id 'java'
-}
+apply plugin: 'java'
 
-group 'com.github.Denstden'
-version '1.0.2'
+group = 'com.github.Denstden'
+version = '1.0.2'
 
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
